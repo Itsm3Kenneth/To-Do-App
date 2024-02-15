@@ -33,7 +33,7 @@ function renderTask() {
 }
 
 addBtn.addEventListener("click", () => {
-  if (inputFeild.value) {
+  if (inputFeild.value.length > 0) {
     renderTask();
   }
 });
