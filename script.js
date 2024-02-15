@@ -33,7 +33,9 @@ function renderTask() {
 }
 
 addBtn.addEventListener("click", () => {
-  renderTask();
+  if (inputFeild.value) {
+    renderTask();
+  }
 });
 
 inputFeild.addEventListener("keypress", (e) => {
