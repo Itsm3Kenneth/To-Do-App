@@ -1,0 +1,1 @@
+Simple To-Do App, track, add, and remove your tasks that need to be finished. 
