@@ -4,28 +4,26 @@ const addBtn = document.querySelector(".add-task");
 
 const task = [];
 
-function renderTaskList() {
+function renderTask(reRender) {
   let result = "";
-  for (let i = 0; i < task.length; i++) {
-    result += `<li class="list-item">${task[i]}</li>`;
-  }
-  list.innerHTML = result;
-  inputFeild.value = "";
-}
-
-function renderTask() {
-  let result = "";
-  if (task.length > 0) {
+  if (reRender) {
+    for (let i = 0; i < task.length; i++) {
+      result += `<li>${task[i]}</li>`;
+    }
+    console.log("reRender");
+    list.innerHTML = result;
+    inputFeild.value = null;
+  } else if (task.length > 0) {
     task.push(inputFeild.value);
     for (let i = 0; i < task.length; i++) {
-      result += `<li class="list-item">${task[i]}</li>`;
+      result += `<li>${task[i]}</li>`;
     }
     list.innerHTML = result;
     inputFeild.value = "";
   } else if (inputFeild.value.length > 0) {
     task.push(inputFeild.value);
     for (let i = 0; i < task.length; i++) {
-      result += `<li class="list-item">${task[i]}</li>`;
+      result += `<li>${task[i]}</li>`;
     }
     list.innerHTML = result;
     inputFeild.value = "";
@@ -34,19 +32,19 @@ function renderTask() {
 
 addBtn.addEventListener("click", () => {
   if (inputFeild.value.length > 0) {
-    renderTask();
+    renderTask(false);
   }
 });
 
 inputFeild.addEventListener("keypress", (e) => {
   if (e.which === 13 && inputFeild.value) {
-    renderTask();
+    renderTask(false);
   }
 });
 
 list.addEventListener("click", (e) => {
-  const index = task.indexOf(e.target.textContent);
+  let index = task.indexOf(e.target.textContent);
   task.splice(index, 1);
-  console.log(task);
-  renderTaskList();
+  console.log(index);
+  renderTask(true);
 });
