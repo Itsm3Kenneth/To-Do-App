@@ -1,64 +1,69 @@
-:root{
- --background: #ffd7ba;
- --text: #ef476f;
- --input-color: #ffffff;
+:root {
+  --background: #ffd7ba;
+  --text: #ef476f;
+  --input-color: #ffffff;
 }
 
-
-body{
-    text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 1.5rem;
-    background-color: var(--background);
-    color: var(--text);
-    overflow-x: hidden;
+body {
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.5rem;
+  background: radial-gradient(
+    circle,
+    rgba(255, 215, 186, 1) 10%,
+    rgba(233, 167, 148, 1) 100%
+  );
+  object-fit: cover;
+  color: var(--text);
+  overflow-x: hidden;
 }
 
-.list{
-    text-align: center;
-    list-style-position: inside;
-    user-select: none;
-    li:hover{
-        cursor: pointer;
-        text-decoration:line-through;
-    }
-}
-
-.input-feild, .add-task{
-    padding: 1.3em 2em;
-    border: none;
-    background-color: var(--input-color);
-    color: var(--text);
-    font-weight: bold;
-    border-radius: 1em;
-    font-size: 0.9rem;
+.list {
+  text-align: center;
+  list-style-position: inside;
+  user-select: none;
+  li:hover {
     cursor: pointer;
+    text-decoration: line-through;
+  }
 }
 
-.input-feild::placeholder{
-    color: var(--text);
+.input-feild,
+.add-task {
+  padding: 1.3em 2em;
+  border: none;
+  background-color: var(--input-color);
+  color: var(--text);
+  font-weight: bold;
+  border-radius: 1em;
+  font-size: 0.9rem;
+  cursor: pointer;
 }
 
-.image-set > img:nth-child(1){
-    position: absolute;
-    opacity: 30%;
-    width: 25%;
-    top: 60%;
-    left: -5%;
+.input-feild::placeholder {
+  color: var(--text);
 }
-.image-set > img:nth-child(2){
-    position: absolute;
-    width: 15%;
-    top: -20%;
-    left: 60%;
-    opacity: 30%;
+
+.image-set > img:nth-child(1) {
+  position: absolute;
+  opacity: 30%;
+  width: 25%;
+  top: 60%;
+  left: -5%;
 }
-.image-set > img:nth-child(3){
-    position: absolute;
-    width: 30%;
-    top: 75%;
-    left: 100%;
-    rotate: -20deg;
-    transform: translate(-50%, -50%);
-    opacity: 30%;
+.image-set > img:nth-child(2) {
+  position: absolute;
+  width: 15%;
+  top: -20%;
+  left: 60%;
+  opacity: 30%;
+}
+.image-set > img:nth-child(3) {
+  position: absolute;
+  width: 30%;
+  top: 75%;
+  left: 100%;
+  rotate: -20deg;
+  transform: translate(-50%, -50%);
+  opacity: 30%;
 }
